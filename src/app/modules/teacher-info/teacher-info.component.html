@@ -1,0 +1,425 @@
+<div class="teachers-info">
+    <h1 class="heading">Teacher's Information ({{singleTeacher.teacherInfo.teacherId}})</h1>
+    <p-breadcrumb [model]="items"></p-breadcrumb>
+
+    <div class="info-main">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="form-area">
+                    <!--  START PERSONAL INFO -->
+                        <div class="head">
+                            <h2 class=""><i class="pi pi-user"></i>Personal Information</h2>
+                            <i (click)="showPersonalDialog()" class="pi pi-user-edit"> Edit Info</i>
+                        </div>
+                        <div class="form-main">
+                            <div class="image">
+                                <img src="../../../assets/students/p1.png" alt="">
+                                <div class="overlay">
+                                    <i class="pi pi-upload"></i>
+                                </div>
+                            </div>
+                            <p class="image-p">Max File Size 1 MB</p>
+                            <div class="form-input personal-info">
+                                <div class="grid">
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Full Name</label>
+                                        <input type="text"  [value]="singleTeacher.teacherInfo.fullName" pInputText placeholder="Full Name" class="p-inputtext-sm" />
+                                    </div>
+                
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Teacher ID</label>
+                                        <input disabled type="text" [value]="singleTeacher.teacherInfo.teacherId" pInputText placeholder="Student ID" class="p-inputtext-sm"/>
+                                    </div>
+                
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Date of Birth</label>
+                                        <p-calendar class="input-calender p-inputtext-sm"  [placeholder]="singleTeacher.teacherInfo.dateOfBirth" [(ngModel)]="date1"></p-calendar>
+                                    </div>
+                
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Gender</label>
+                                        <input disabled type="text" [value]="singleTeacher.teacherInfo.gender" pInputText placeholder="Student ID" class="p-inputtext-sm"/>
+                                    </div>
+                
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Mobile Number</label>
+                                        <input type="text" [value]="singleTeacher.teacherInfo.mobileNumber" pInputText placeholder="Mobile Number" class="p-inputtext-sm"/>
+                                    </div>
+                
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Email</label>
+                                        <input type="text" [value]="singleTeacher.teacherInfo.email" pInputText placeholder="Email" class="p-inputtext-sm"/>
+                                    </div>
+                
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Address</label>
+                                        <input type="text" [value]="singleTeacher.teacherInfo.address" pInputText placeholder="Address" class="p-inputtext-sm"/>
+                                    </div>
+                
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Street/City</label>
+                                        <input type="text" [value]="singleTeacher.teacherInfo.city" pInputText placeholder="Street/City" class="p-inputtext-sm"/>
+                                    </div>
+                
+                                    <div class="col-12 md:col-4 lg:col-4 field">
+                                        <label for="float-input">Post Code</label>
+                                        <input type="text" [value]="singleTeacher.teacherInfo.postCode" pInputText placeholder="Post Code" class="p-inputtext-sm"/>
+                                    </div>
+                                    <div class="col-12 md:col-12 lg:col-12 field">
+                                        <label for="float-input">NI Number</label>
+                                        <input type="text" [value]="singleTeacher.teacherInfo.niNumber" pInputText placeholder="Ni Number" class="p-inputtext-sm"/>
+                                    </div>
+                              </div>
+                            </div>
+                        </div>
+
+                            <div class="head academic">
+                                <h2 class=""><i class="pi pi-pencil"></i>Academic Information</h2>
+                                <i (click)="showAcademicDialog()"  class="pi pi-user-edit"> Edit Info</i>
+                            </div>
+                            <!-- academic info -->
+                            <div class="form-main academic-info">
+                                <div class="form-main academic-info">
+                                    <div class="form-input ">
+                                         <div class="div">
+                                             <p-table [value]="singleTeacher.selectedClass" responsiveLayout="scroll">
+                                                 <ng-template pTemplate="header">
+                                                     <tr>
+                                                         <th>Subjects</th>
+                                                         <th>Sub Subjects</th>
+                                                         <th>Schedule Time</th>
+                                                         <th>Schedule Day</th>
+                                                         <th>Year Group</th>
+                                                     </tr>
+                                                 </ng-template>
+                                                 <ng-template pTemplate="body" let-product>
+                                                     <tr>
+                                                         <td>{{product.subject}}</td>
+                                                         <td>{{product.subSubject}}</td>
+                                                         <td>{{product.scheduleTime}}</td>
+                                                         <td>{{product.scheduleDay}}</td>
+                                                         <td>{{product.yearGroup}}</td>
+                                                     </tr>
+                                                 </ng-template>
+                                             </p-table>
+                                         </div>
+                                     </div>
+                                 </div>
+
+                            </div>
+                            <!-- END ACADEMIC INFO -->
+                        <!--  OTHER INFO -->
+                        <div class="head others">
+                            <h2 class=""><i class="pi pi-pencil"></i>Others Information</h2>
+                            <i (click)="showOthersDialog()"  class="pi pi-user-edit"> Edit Info</i>
+                        </div>
+                        <div class="form-main academic-info">
+                            <div class="form-input ">
+                                <div class="grid">
+                                    <div class="col-12 md:col-3 lg:col-3 field">
+                                        <label for="float-input">Emergencey Contact 1</label>
+                                        <input type="text" pInputText placeholder="Contact Person" class="p-inputtext-sm" />
+                                    </div>
+                
+                                    <div class="col-12 md:col-3 lg:col-3 field">
+                                        <label for="float-input">Email of Person 1</label>
+                                        <input type="text" pInputText placeholder="Email of Person 1" class="p-inputtext-sm"/>
+                                    </div>
+                
+                                    <div class="col-12 md:col-3 lg:col-3 field">
+                                        <label for="float-input">Mobile Number 1</label>
+                                        <input type="text" pInputText placeholder="Mobile Number 1" class="p-inputtext-sm"/>            
+                                    </div>
+                                    <div class="col-12 md:col-3 lg:col-3 field">
+                                        <label for="float-input">Relationship</label>
+                                        <input type="text" pInputText placeholder="Relationship" class="p-inputtext-sm" />
+                                    </div>
+                                    <div class="col-12 md:col-3 lg:col-3 field">
+                                        <label for="float-input">Emergencey Contact 2</label>
+                                        <input type="text" pInputText placeholder="Contact Person" class="p-inputtext-sm" />
+                                    </div>
+                
+                                    <div class="col-12 md:col-3 lg:col-3 field">
+                                        <label for="float-input">Email of Person 2</label>
+                                        <input type="text" pInputText placeholder="Email of Person 1" class="p-inputtext-sm"/>
+                                    </div>
+                
+                                    <div class="col-12 md:col-3 lg:col-3 field">
+                                        <label for="float-input">Mobile Number 2</label>
+                                        <input type="text" pInputText placeholder="Mobile Number 2" class="p-inputtext-sm"/>
+                                    </div>
+                                   
+                                    <div class="col-12 md:col-3 lg:col-3 field">
+                                        <label for="float-input">Relationship</label>
+                                        <input type="text" pInputText placeholder="Relationship" class="p-inputtext-sm" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       <!-- END OTHER INFO -->
+                       <button class="form-button">Submit</button>
+                    </div>
+            </p-tabPanel>
+
+            <p-tabPanel header="Register">
+                <div class="card registers" >
+                    <p-table [value]="singleRegister"  #dt1
+                    styleClass="p-datatable-gridlines"
+                    dataKey="id"
+                    [rows]="8" 
+                    [showCurrentPageReport]="true"
+                    [paginator]="true"
+                    [rowHover]="true"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                    [globalFilterFields]="['studentname','subject','schedualeday','action']">
+                    >
+                    <ng-template pTemplate="caption">
+                        <div class="flex">
+                    
+                            <p style="font-weight: 400;font-size:18px">
+                                All register history of <b>{{singleTeacher.teacherInfo.fullName}}</b>
+                            </p>
+                            <span class="p-input-icon-left ml-auto">
+                                <i class="pi pi-search"></i>
+                                <input pInputText type="text" (input)="dt1.filterGlobal($event, 'contains')" placeholder="Search keyword" />
+                            </span>
+        
+                        </div>
+                    </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th pSortableColumn="date">Date <p-sortIcon field="date"></p-sortIcon></th>
+                                <th pSortableColumn="scheduleDay">Schedule Day <p-sortIcon field="scheduleDaye"></p-sortIcon></th>
+                                <th pSortableColumn="scheduleTime">Schedule Time <p-sortIcon field="scheduleTime"></p-sortIcon></th>
+                                <th pSortableColumn="tutorName">Tutor Name <p-sortIcon field="tutorName"></p-sortIcon></th>
+                                <th pSortableColumn="present">Present <p-sortIcon field="present"></p-sortIcon></th>
+                                <th pSortableColumn="action">Action<p-sortIcon field="action"></p-sortIcon></th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-singleRegister>
+                            <tr style="cursor: pointer;">
+                                    <td>{{singleRegister.date}}</td>
+                                    <td>{{singleRegister.day}}</td>
+                                    <td>{{singleRegister.time}}</td>
+                                    <td>{{singleTeacher.teacherInfo.fullName}}</td>
+                                    <td>
+                                        <!-- <p-button *ngIf="singleRegister.status == 1" label="Yes"></p-button>
+                                        <p-button *ngIf="singleRegister.status == 2" label="No"></p-button> -->
+                                        <p class="bg-level yes" *ngIf="singleRegister.attendances[0].status == 1"> Yes </p>
+                                        <p class="bg-level planned" *ngIf="singleRegister.attendances[0].status == 2">Planned</p>
+                                        <p class="bg-level unplanned" *ngIf="singleRegister.attendances[0].status == 3">Unplanned</p>
+                                    
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <i class="pi pi-pencil st-icon"></i>
+                                        <i class="pi pi-trash st-icon"></i>
+                                    </td>
+        
+                            </tr>
+                        </ng-template>
+                    </p-table>
+        
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="Timetable">
+                <div class="timeline" >
+                    <full-calendar [options]="calendarOptions"></full-calendar>     
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>
+
+
+<!-- |||||||||||||||||||||||||||     POPUP DIALOG BOX      ||||||||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+                <!-- Personal Dialouge box form -->
+                <p-dialog header="Update Your Personal Information" [(visible)]="displayPersonal" [style]="{width: '70vw'}">
+                    <div class="form-main">
+                        <div class="form-input personal-info">
+                            <div class="grid">
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Full Name</label>
+                                    <input type="text"  pInputText placeholder="Full Name" class="p-inputtext-sm" />
+                                </div>
+            
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Student ID</label>
+                                    <input type="text" pInputText placeholder="Student ID" class="p-inputtext-sm"/>
+                                </div>
+            
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Date of Birth</label>
+                                    <p-calendar class="input-calender p-inputtext-sm" placeholder="Date of Birth" [(ngModel)]="date1"></p-calendar>
+                                </div>
+            
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Gender</label>
+                                    <p-dropdown class="p-inputtext-sm" [options]="gender"  optionLabel="name"></p-dropdown>
+                                </div>
+            
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Mobile Number</label>
+                                    <input type="text" pInputText placeholder="Mobile Number" class="p-inputtext-sm"/>
+                                </div>
+            
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Email</label>
+                                    <input type="text" pInputText placeholder="Email" class="p-inputtext-sm"/>
+                                </div>
+            
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Address</label>
+                                    <input type="text" pInputText placeholder="Address" class="p-inputtext-sm"/>
+                                </div>
+            
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Street/City</label>
+                                    <input type="text" pInputText placeholder="Street/City" class="p-inputtext-sm"/>
+                                </div>
+            
+                                <div class="col-12 md:col-4 lg:col-4 field">
+                                    <label for="float-input">Post Code</label>
+                                    <input type="text" pInputText placeholder="Post Code" class="p-inputtext-sm"/>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <button class="form-button">Update</button>
+                </p-dialog>
+                <!-- Dialouge box form end -->
+
+                  <!--Academic Dialouge box form -->
+                <p-dialog header="Update Your Academic Information" [(visible)]="displayAcademic" [style]="{width: '70vw'}">
+                        <div class="form-main">
+                            <div class="form-input ">
+                                <div class="grid">
+                                    <div class="col-12 md:col-6 lg:col-4 field">
+                                        <label for="float-input">Enrollment</label>
+                                        <p-calendar class="input-calender p-inputtext-sm" placeholder="dd/mm/yy" [(ngModel)]="date1"></p-calendar>                    </div>
+            
+            
+                                    <div class="col-12 md:col-6 lg:col-4 field">
+                                        <label for="float-input">Year Group</label>
+                                        <p-multiSelect placeholder="Class" class="p-inputtext-sm" [options]="yearGroup" optionLabel="name" display="chip"></p-multiSelect>
+                                    </div>
+            
+                                    <div class="col-12 md:col-6 lg:col-4 field">
+                                        <label for="float-input">Teachers</label>
+                                        <p-multiSelect placeholder="Class" [itemSize]="30" [options]="tutor" optionLabel="name" display="chip"></p-multiSelect>
+                                    </div>
+            
+                                    <div class="col-12 md:col-6 lg:col-3 field">
+                                        <label for="float-input">Schedule Day</label>
+                                        <p-multiSelect placeholder="Class" [itemSize]="30" [options]="tutor" optionLabel="name" display="chip"></p-multiSelect>
+                                    </div>
+                                    <div class="col-12 md:col-6 lg:col-3 field">
+                                        <label for="float-input">Scheduale Time</label>
+                                        <p-multiSelect placeholder="Class" [itemSize]="30" [options]="tutor" optionLabel="name" display="chip"></p-multiSelect>
+                                    </div>
+            
+                                    <div class="col-12 md:col-6 lg:col-3 field">
+                                        <label for="float-input">Subject</label>
+                                        <p-multiSelect placeholder="Subject" class="p-inputtext-sm" [options]="class" optionLabel="name" display="chip"></p-multiSelect>
+                                    </div>
+            
+                                    <div class="col-12 md:col-6 lg:col-3 field">
+                                        <label for="float-input">Sub-Subject</label>
+                                        <p-multiSelect placeholder="Subject" class="p-inputtext-sm" [options]="class" optionLabel="name" display="chip"></p-multiSelect>
+                                    </div>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="form-button">Update</button>
+                </p-dialog>
+                <!-- Dialouge box form end -->
+
+                <!-- Others Dialouge box form -->
+                <p-dialog header="Update Your Others Information" [(visible)]="displayOthers" [style]="{width: '70vw'}">
+                    <div class="form-main academic-info">
+                        <div class="form-input ">
+                            <div class="grid">
+                                <div class="col-12 md:col-3 lg:col-3 field">
+                                    <label for="float-input">Emergencey Contact 1</label>
+                                    <input type="text" pInputText placeholder="Contact Person" class="p-inputtext-sm" />
+                                </div>
+            
+                                <div class="col-12 md:col-3 lg:col-3 field">
+                                    <label for="float-input">Email of Person 1</label>
+                                    <input type="text" pInputText placeholder="Email of Person 1" class="p-inputtext-sm"/>
+                                </div>
+            
+                                <div class="col-12 md:col-3 lg:col-3 field">
+                                    <label for="float-input">Mobile Number 1</label>
+                                    <input type="text" pInputText placeholder="Mobile Number 1" class="p-inputtext-sm"/>            
+                                </div>
+                                <div class="col-12 md:col-3 lg:col-3 field">
+                                    <label for="float-input">Relationship</label>
+                                    <input type="text" pInputText placeholder="Relationship" class="p-inputtext-sm" />
+                                </div>
+                                <div class="col-12 md:col-3 lg:col-3 field">
+                                    <label for="float-input">Emergencey Contact 2</label>
+                                    <input type="text" pInputText placeholder="Contact Person" class="p-inputtext-sm" />
+                                </div>
+            
+                                <div class="col-12 md:col-3 lg:col-3 field">
+                                    <label for="float-input">Email of Person 2</label>
+                                    <input type="text" pInputText placeholder="Email of Person 1" class="p-inputtext-sm"/>
+                                </div>
+            
+                                <div class="col-12 md:col-3 lg:col-3 field">
+                                    <label for="float-input">Mobile Number 2</label>
+                                    <input type="text" pInputText placeholder="Mobile Number 2" class="p-inputtext-sm"/>
+                                </div>
+                               
+                                <div class="col-12 md:col-3 lg:col-3 field">
+                                    <label for="float-input">Relationship</label>
+                                    <input type="text" pInputText placeholder="Relationship" class="p-inputtext-sm" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <button class="form-button">Update</button>
+                </p-dialog>
+                <!-- Others Dialog box form end -->
+
+                <!-- Timetable -->
+                 <p-dialog header="Timetable" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}">
+                                    <div class="card">
+                                        <p-table [value]="posts"  #dt1
+                                        styleClass="p-datatable-gridlines"
+                                        dataKey="id"
+                                        [rows]="8" 
+                                        [showCurrentPageReport]="true"
+                                        [paginator]="false"
+                                        [rowHover]="true"
+                                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                                        [globalFilterFields]="['studentId','subject','subSubject','teacherId']">
+                
+                                        >
+                                          <ng-template pTemplate="caption">
+                                           </ng-template>
+                                            <ng-template pTemplate="header">
+                                                <tr>
+                                                    <th pSortableColumn="studentId" >Student Id <p-sortIcon field="studentId"></p-sortIcon></th>
+                                                    <th pSortableColumn="subject">Subject <p-sortIcon field="subject"></p-sortIcon></th>
+                                                    <th pSortableColumn="subSubject">Sub Subject <p-sortIcon field="subSubject"></p-sortIcon></th>
+                                                    <th pSortableColumn="teacherId">Teacher Id <p-sortIcon field="teacherId"></p-sortIcon></th>
+                                                    <th pSortableColumn="scheduleTime">Schedule Time <p-sortIcon field="scheduleTime"></p-sortIcon></th>
+                                                </tr>
+                                            </ng-template>
+                                            <ng-template pTemplate="body" let-posts>
+                                                <tr  style="cursor: pointer;">
+                                    
+                                                    <td>{{posts.studentId}}</td>
+                                                    <td>{{posts.subject}}</td>
+                                                    <td>{{posts.subSubject}}</td>
+                                                    <td>{{posts.teacherId}}</td>
+                                                    <td>{{posts.scheduleTime.substring(11, 19)}}</td>
+                           
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+                                    </div> 
+                </p-dialog>    

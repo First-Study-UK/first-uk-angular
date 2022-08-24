@@ -1,0 +1,14 @@
+{
+    "data": [
+        {"yeargroup": "Key Stage 01", "year":"Year 01", "subject": "Orange"},
+        {"yeargroup": "Key Stage 02", "year": "Year 02", "subject": "Black"},
+        {"yeargroup": "Key Stage 03", "year": "Year 03", "subject": "Gray"},
+        {"yeargroup": "Key Stage 04", "year": "Year 04", "subject": "Blue"},
+        {"yeargroup": "Key Stage 05", "year": "Year 05", "subject": "Orange"},
+        {"yeargroup": "Key Stage 06", "year": "Year 06", "subject": "Black"},
+        {"yeargroup": "Key Stage 07", "year": "Year 07", "subject": "Yellow"},
+        {"yeargroup": "Key Stage 09", "year":"Year 08", "subject": "Orange"},
+        {"yeargroup": "Key Stage 10", "year": "Year 09", "subject": "Black"},
+        {"yeargroup": "Key Stage 11", "year":"Year 10", "subject": "Red"}
+    ]
+}

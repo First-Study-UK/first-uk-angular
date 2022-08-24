@@ -1,0 +1,98 @@
+.content-area{
+    padding: 50px 15px 20px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    }
+    
+    .page-title{
+        margin-left: 10px;
+        margin-top: 40px;
+    }
+    .desboard-cards{
+     margin-top: 50px;
+    }
+    .deshboard-single-card{
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-shadow: rgba(26, 17, 27, 0.3) 0px 1px 0px;
+    }
+
+     .ds-cards:nth-child(1) .deshboard-single-card {
+        background: rgb(255, 249, 226);
+    }
+     .ds-cards:nth-child(2) .deshboard-single-card {
+        background: rgb(255, 223, 223)
+    }
+     .ds-cards:nth-child(3) .deshboard-single-card {
+        background: rgb(229, 227, 255)
+    }
+    .deshboard-single-card img{
+        width: 60px;
+        margin-right: 15px;
+    }
+    .deshboard-single-card h4{
+        font-size: 20px;
+    }
+    .deshboard-single-card h4 span{
+        font-size: 14px;
+        font-weight: 500;
+        color: rgb(83, 83, 83);
+
+    }
+    
+    .weekly-fees{
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 0 50px 50px;
+    }
+
+
+    .weekly-fees .weekly-fee-header{
+        display: block;
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid rgb(243, 243, 243);
+    }
+    .weekly-fees .weekly-fee-header.noborder{
+        border: none;
+    }
+
+    .weekly-fees .weekly-fee-header h3{
+       font-size: 24px;
+       color: rgba(10, 11, 27, 1);
+    }
+
+    .field{
+        margin-bottom: 0!important;
+    }
+    .btn{
+        margin: 20px 0;
+        width: 100%;
+    }
+    .col-12 {
+    padding: 10px 00px!important;
+
+    }
+
+    textarea{
+        width: 100%;
+        height: 80px;
+        border-radius: 5px;
+        border: 1px solid rgb(172, 172, 172); 
+        padding: 10px;
+    }
+
+    textarea:focus{
+        border: 1px solid rgb(172, 172, 172);;
+        outline: none;
+    }
+    @media (min-width: 400px) and (max-width: 500px) {
+        .content-area{
+         width: 100%;
+        }
+       }

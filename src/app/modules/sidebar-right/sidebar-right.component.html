@@ -1,0 +1,52 @@
+<div class="content-area">
+    <div class="sidebar-text">
+        <h4>Quick Action</h4>
+    </div>
+    <div class="quick-buttons">
+        <div  class="quick-single-button" >
+            <img src="../../assets/sidebar/std.png" alt="">
+            <a href="add-student">Add Student</a>
+        </div>
+        <div  class="quick-single-button" >
+            <img src="../../assets/sidebar/fee.png" alt="">
+            <a href="newinvoice">Receive Fee</a>
+           
+        </div>
+        <div   class="quick-single-button">
+            <img src="../../assets/sidebar/time.png" alt="">
+            <a href="/timetable">TimeTable</a>
+            
+        </div>
+    </div>
+    
+
+    <div class="alart">
+        <h3 style="margin:20px 0 ;">Upcomming Eevents</h3>
+
+            <div *ngFor="let item of events">
+                <div class="card">
+                  <div class="circle">
+                      <h2 *ngIf="item.id < 10">0{{item.id}}</h2>
+                      <h2 *ngIf="item.id >= 10">{{item.id}}</h2>
+                  </div>
+                  <div class="text">
+                      <h3>{{item.title}}</h3>
+                      <p>
+                          <span>{{item.date}}</span>
+                      </p>
+                      <p>{{item.details}}</p>
+                  </div>
+                 </div>
+            </div>
+
+
+        <div *ngIf="loading == true" style="display: flex; justify-content:center">
+            <div style="text-align: center; padding: 21px;">
+                <p-progressSpinner  strokeWidth="4"></p-progressSpinner>
+                <p>Data is loading...</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+

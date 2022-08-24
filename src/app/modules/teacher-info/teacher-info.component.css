@@ -1,0 +1,225 @@
+.teachers-info{
+    padding: 85px 30px 20px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+.info-main{
+    margin-top: 10px;
+}
+
+.heading-head{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.heading-head h1{
+    font-size: 28px;
+}
+
+.heading{
+    font-size: 28px;
+    font-weight: 500;
+    color: #282B6C;
+}
+.form-area{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.form-heading{
+    font-size: 18px;
+    font-weight: 500;
+    color: #282B6C;
+    border-bottom: 2px solid #dfdfdf;
+    padding: 30px;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 30px;
+}
+
+.form-main{
+padding: 30px;
+background: white;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+.personal-info{
+    margin-top: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.image{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+image img{
+    width: 100%;
+    height: 100%;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #282b6cb1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay i{
+  color: white;
+}
+.image-p{
+    margin-top: 5px;
+    font-size: 12px;
+    color: #0A0B1B;
+}
+
+
+
+.p-inputtext{
+    background-color: #f9f9f9!important;
+    width: 100%!important;
+}
+
+.field {
+    margin-bottom: 10px!important;
+}
+
+.field > label{
+    color: #181b3c;
+    font-size: 16px;
+}
+
+/* academic info start */
+
+
+.academic-info{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.pi-user,.pi-pencil{
+    margin-right: 8px;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: white;
+    border-bottom: 2px solid #dfdfdf;
+    padding: 20px;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Roboto', sans-serif!important;
+}
+
+.head h2{
+    font-size: 18px;
+    font-weight: 500;
+    color: #282B6C;
+    margin-top: 5px;
+
+}
+
+.academic,.others{
+    margin-top: 25px;
+}
+
+.head .pi-user-edit{
+    padding: 8px 10px;
+    border: 1px solid #282B6C;
+    border-radius: 5px;
+    color: #282B6C;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 12px;
+    
+}
+.head .pi-user-edit:hover{
+    background: #282B6C;
+    color: white;
+    box-shadow: 0px 13px 25px 0px rgba(40, 43, 108, 0.25);
+}
+
+.form-button{
+    padding: 12px 35px;
+    background: #282B6C;
+    font-weight: 500;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.registers{
+    margin-top: 20px;
+    padding: 30px 50px ;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.registers .p-inputtext {
+    width: 100%;
+    padding: 11px 30px!important;
+    font-size: 14px!important;
+}
+
+.registers .st-icon{
+    font-size: 14px!important;
+    margin-right: 10px;
+    transition: 0.1s;
+}
+.registers .st-icon:hover{
+    font-size: 16px!important;
+    font-weight: 600;
+}
+
+.timeline{
+    background: white;
+    padding: 30px;
+}
+.fc-dayGridMonth-button{
+    background: #282B6C!important;
+    color: white!important;
+}
+
+
+.bg-level{
+    background: #282B6C!important;
+    color: white!important;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.bg-level.planned{
+    background: #ff4646!important;
+    color: white!important;
+    padding: 5px 10px;
+}
+.bg-level.unplanned{
+    background: #ff8205!important;
+    color: white!important;
+    padding: 5px 10px;
+}
+
+.udoy{
+    color: red;
+}

@@ -1,0 +1,65 @@
+.accounts{
+    padding: 85px 30px 20px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+.heading h1{
+    font-size: 25px;
+    color: rgba(40, 43, 108, 1);
+}
+.main-table{
+    margin-top: 20px;
+    padding: 80px ;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.total-card{
+    width: 250px;
+background:rgba(40, 43, 108, 1);
+padding: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 5px;
+right: 50px ;
+position: fixed;
+bottom: 50px ;
+margin-top: 40px;
+}
+.total-card .text p{
+    font-size: 14px;
+    color: white;
+}
+.total-card .text h2{
+    font-size: 26px;
+    color: white;
+    font-weight: 600;
+}
+.total-card img{
+    width: 45px;
+    margin-right: 10px;
+}
+
+.p-inputtext {
+    width: 100%;
+    padding: 11px 30px!important;
+    font-size: 14px!important;
+}
+
+.st-icon{
+    font-size: 14px!important;
+    margin-right: 10px;
+    transition: 0.1s;
+}
+.st-icon:hover{
+    font-size: 16px!important;
+    font-weight: 600;
+}

@@ -1,0 +1,15 @@
+
+<div class="grid header">
+    <div class="md:col-2 lg:col-2 col-2 logo">
+        <img src="../../../assets/header/logo.svg" alt="">
+    </div>
+
+    <div class="md:col-8 lg:col-8 col-8 search">
+        <span class="p-input-icon-left">
+            <!-- <input type="text" pInputText placeholder="Search.." [(ngModel)]="value3" /> -->
+            
+            <p-autoComplete  [(ngModel)]="text" placeholder="Search Student by Name" #e (onSelect)="searchSelected(e.value)"  [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+        </span>
+
+    </div>
+</div> 

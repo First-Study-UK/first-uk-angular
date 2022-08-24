@@ -1,0 +1,182 @@
+
+
+<div class="content-area">
+
+     <div class="grid">
+        <div class="col-9 md:col-9 lg:col-9">
+            <div class="page-title">
+                <h1 class="heading">Welcome Admin</h1>
+                <h3 class="sub-heading">Dashboard</h3>
+            </div>
+            <div class="grid" style="margin-top:50px">
+                <div class="col-4 ds-cards">
+                    <div class="deshboard-single-card">
+                        <img src="../../assets/sidebar/card2.png" alt="">
+                        <h4>$2075.00 <br><span>Total Income</span></h4>
+                    </div>
+                </div>
+                <div class="col-4 ds-cards">
+                    <div class="deshboard-single-card">
+                        <img src="../../assets/sidebar/card2.png" alt="">
+                        <h4>$2075.00 <br><span>Total Income</span></h4>
+                    </div>
+                </div>
+                <div class="col-4 ds-cards">
+                    <div class="deshboard-single-card">
+                        <img src="../../assets/sidebar/card2.png" alt="">
+                        <h4>+1060 <br><span>Active Student</span></h4>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="grids weekly-fees">
+                        <div class="weekly-fee-header">
+                           <div class="text">
+                               <h3>Weekly Fees</h3>
+                               <p>{{dateData}}</p>
+                           </div>
+                           <div class="list-btn">
+                               <button pButton type="button" routerLink="/accounts" label="View List" class="p-button-outlined" style="color: white;"></button>
+                           </div>
+                        </div>
+
+                       <div *ngIf="loading == false" class="card">
+                           <p-table [value]="allInvoice"  
+                           [virtualScroll]="true"
+                           [scrollable]="true" 
+                           [rows]="50" 
+                            scrollHeight="380px"
+                           [virtualScroll]="true"
+                           [virtualRowHeight]="0"
+                           
+                           >
+                               <ng-template pTemplate="header">
+                                   <tr>
+                                       <th pSortableColumn="studentId">ID <p-sortIcon field="studentId"></p-sortIcon></th>
+                                       <th pSortableColumn="studentName">Name <p-sortIcon field="studentName"></p-sortIcon></th>
+                                       <th pSortableColumn="fees">Fees <p-sortIcon field="fees"></p-sortIcon></th>
+                                       <th pSortableColumn="totalPayable">Payable <p-sortIcon field="totalPayable"></p-sortIcon></th>
+                                       <th pSortableColumn="endDate">Method <p-sortIcon field="endDate"></p-sortIcon></th>
+                                       <th pSortableColumn="endDate"> End Date<p-sortIcon field="endDate"></p-sortIcon></th>
+                                   </tr>
+                               </ng-template>
+                               <ng-template pTemplate="body" let-allInvoice>
+                                   <tr>
+                                       <td>{{allInvoice.studentId}}</td>
+                                       <td>{{allInvoice.studentName}}</td>
+                                       <td>{{allInvoice.fees}}</td>
+                                       <td>$.{{allInvoice.totalPayable}}</td>
+                                       <td>{{allInvoice.paymentMethod}}</td>
+                                       <td>{{allInvoice.endDate}}</td>
+                                   </tr>
+                               </ng-template>
+                           </p-table>
+                       </div>
+
+                    <div *ngIf="loading == true" style="display: flex; justify-content:center">
+                        <div style="text-align: center;">
+                            <p-progressSpinner strokeWidth="3"></p-progressSpinner>
+                            <p>Data is loading...</p>
+                        </div>
+                    </div>
+
+                   </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-3 md:col-3 lg:col-3" style="padding-right: 0; position: relative;">
+          <app-sidebar-right > </app-sidebar-right> 
+       </div>
+    </div>
+
+    <div class="grid">
+        <div class="col-6">
+    <div class="grids weekly-fees">
+       <div class="weekly-fee-header noborder">
+          <div class="text">
+              <h3>Set Eevents</h3>
+          </div>
+          <div class="list-btn">
+              <button pButton type="button" label="All Events" class="p-button-outlined" style="color: white;"></button>
+          </div>
+       </div>
+       <div class="card">
+           <div class="calender">
+               <p-calendar 
+                 [(ngModel)]="date14" 
+                 [inline]="true" 
+                 [showWeek]="true" 
+                 (onSelect)="onFocus()"
+                 
+                 >
+               </p-calendar>
+               <p-dialog header="Add New Event" [(visible)]="display" [modal]="true" [style]="{width: '30vw'}">
+                   
+                   <form [formGroup]="addEvent"  (ngSubmit)="onSubmit()" >
+                           <div class="col-12 md:col-12 lg:col-12">
+                               <div class="grid">
+                                   <div class="col-12 md:col-12 lg:col-12 field">
+                                       <label for="float-input">Title</label>
+                                       <input type="text" formControlName="title" pInputText placeholder="Title" class="p-inputtext-sm"  />
+                                   </div>
+                                   <div class="col-12 md:col-12 lg:col-12 field ">
+                                       <label for="float-input">Date</label>
+                                       <p-calendar  appendTo="body" formControlName="date" dateFormat="dd/mm/yy" placeholder="Date" ></p-calendar> 
+                                   </div>
+                                  
+                                   <div class="col-12 md:col-12 lg:col-12 field">
+                                       <label for="float-input">Details</label>
+                                       <textarea formControlName="details" class="p-inputtext-sm" placeholder="Details"  pInputTextarea autoResize="autoResize"></textarea>
+
+                                   </div>
+                               </div>
+                       </div>
+                   
+                   
+                          <button class="btn">Add Event</button>
+                          </form>
+               </p-dialog>
+           </div>
+       </div>
+
+
+
+  </div>
+        </div>
+        <div class="col-6">
+            <div class="grids weekly-fees ">
+
+                    <div class="weekly-fee-header">
+                        <div class="text">
+                            <h3>Students By Year</h3>
+                        </div>
+                        <div class="list-btn">
+                            <button pButton type="button" label="View All Students" class="p-button-outlined" style="color: white;"></button>
+                        </div>
+                     </div>
+                     <div class="card">
+                         <p-chart type="bar" [data]="data" [options]="options"></p-chart>
+                     </div>
+     
+                     <!-- <div *ngIf="loading == true" style="display: flex; justify-content:center">
+                         <div style="text-align: center; padding: 21px;">
+                             <p-progressSpinner  strokeWidth="4"></p-progressSpinner>
+                             <p>Data is loading...</p>
+                         </div>
+                     </div> -->
+            
+
+
+
+           </div>
+        </div>
+    </div>
+ 
+ 
+</div>
+
+
+
+
+

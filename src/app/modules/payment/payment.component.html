@@ -1,0 +1,56 @@
+<div class="student-payment">
+<div class="card">
+    <p-table [value]="singlePayment"  #dt1
+    styleClass="p-datatable-gridlines"
+    dataKey="id"
+    [rows]="5" 
+    [showCurrentPageReport]="true"
+    [paginator]="true"
+    [rowHover]="true"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [globalFilterFields]="['name','country.name','representative.name','status']"
+    [loading]="loading"
+    >
+    
+    >
+    <ng-template pTemplate="caption">
+        <div class="flex">
+    
+            <p style="font-weight: 400;font-size:18px">
+                All payment history
+            </p>
+            <span class="p-input-icon-left ml-auto">
+                <i class="pi pi-search"></i>
+                <input pInputText type="text" (input)="dt1.filterGlobal($event, 'contains')" placeholder="Search keyword" />
+            </span>
+
+        </div>
+    </ng-template>
+
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th pSortableColumn="studentid">Student's ID <p-sortIcon field="studentid"></p-sortIcon></th>
+                <th pSortableColumn="studentName">Name <p-sortIcon field="studentName"></p-sortIcon></th>
+                <th pSortableColumn="enrolmentDate">Enrole Date<p-sortIcon field="enrolmentDate"></p-sortIcon></th>
+                <th pSortableColumn="endDate">End Date<p-sortIcon field="endDate"></p-sortIcon></th>
+                <th pSortableColumn="fees">Fees <p-sortIcon field="fees"></p-sortIcon></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-courses>
+            <tr [routerLink]="['/studentinfo', courses.id]" style="cursor: pointer;">
+                <td>{{courses.studentId}}</td>
+                <td>{{courses.studentName}}</td>
+                <td>{{courses.endDate.substring(0, 10)}}</td>
+                <td>{{courses.enrolmentDate.substring(0, 10)}}</td>
+                <td>{{courses.fees}}</td>
+                <td style="text-align:center;">
+                    <i class="pi pi-pencil st-icon"></i>
+                    <i class="pi pi-trash st-icon"></i>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+</div>

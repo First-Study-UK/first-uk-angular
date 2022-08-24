@@ -1,0 +1,120 @@
+
+
+
+
+  <div class="top-header">
+     <app-header ></app-header>
+ </div>
+ 
+ <div style="display:flex; width: 100%;">
+       <div class="sidebar" >
+          <div class="logo-details">
+            <i class='bx bx-menu dash' id="btn1" ></i>
+          </div>
+          <ul class="nav-links">
+            <li routerLink="dashboard">
+              <a >
+                <i class='bx bx-grid-alt' ></i>
+                <span routerLink="dashboard" class="link_name">Dashboard</span>
+              </a>
+              <ul class="sub-menu blank">
+                <li routerLink="dashboard"><a class="link_name">Dashboard</a></li>
+              </ul>
+            </li>
+            <li class="add">
+              <div class="iocn-link">
+                <a >
+                  <i class='bx bxs-user' ></i>
+                  <span class="link_name">Students</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+              </div>
+              <ul class="sub-menu">
+                <li routerLink="addstudent"><a><i class='bx bxs-user-plus'></i> Add Student</a></li>
+                <li routerLink="students"><a><i class='bx bxs-user-detail' ></i> All Students</a></li>
+              </ul>
+            </li>
+            <li class="add">
+              <div class="iocn-link">
+                <a >
+                  <i class='bx bxs-user-voice' ></i>
+                  <span class="link_name">Teachers</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+              </div>
+              <ul class="sub-menu">
+                <li routerLink="addteacher"><a><i class='bx bxs-user-plus'></i> Add Teacher</a></li>
+                <li routerLink="teachers"><a><i class='bx bxs-user-detail' ></i> All Teachers</a></li>
+              </ul>
+            </li>
+            <li>
+              <a >
+                <i class='bx bxs-book' ></i>
+                <span routerLink="subjects" class="link_name">Subjects</span>
+              </a>
+              <ul class="sub-menu blank">
+                <li routerLink="subjects"><a class="link_name" href="#">Subjects</a></li>
+              </ul>
+            </li>
+            <li >
+              <a >
+                <i class='bx bxs-hand' ></i>
+                <span routerLink="registers" class="link_name">Register</span>
+              </a>
+              <ul class="sub-menu blank">
+                <li routerLink="registers"><a class="link_name" href="#">Register</a></li>
+              </ul>
+            </li>
+            <li class="add">
+              <div class="iocn-link">
+                <a >
+                  <i class='bx bxs-bank' ></i>
+                  <span class="link_name">Accounts</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow' ></i>
+              </div>
+              <ul class="sub-menu">
+                <li><a class="link_name" href="#">Accounts</a></li>
+                <li routerLink="income"><a><i class='bx bxs-user-plus'></i> Income</a></li>
+                <li routerLink="expense"><a><i class='bx bxs-user-plus'></i> Expense</a></li>
+              </ul>
+            </li>
+            <li>
+              <a >
+                <i class='bx bx-timer' ></i>
+                <span routerLink="timetable" class="link_name">Timetable</span>
+              </a>
+              <ul class="sub-menu blank">
+                <li routerLink="timetable"><a class="link_name" href="#">Timetable</a></li>
+              </ul>
+            </li>
+            <li>
+              <a >
+                <i class='bx bxs-grid'></i>
+                <span  class="link_name">Settings </span>
+              </a>
+              <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Settings</a></li>
+              </ul>
+            </li>
+            <li>
+          <div class="profile-details">
+            <div class="profile-content">
+              <img src="../../../assets/header/avater.png" alt="profileImg">
+            </div>
+            <div class="name-job">
+              <div class="profile_name">Sanjida</div>
+              <div class="job">Admin</div>
+            </div>
+            <i class='bx bx-log-out' (click)="logout()" ></i>
+          </div>
+        </li>
+         </ul>
+      </div> 
+   <section class="home-section">
+           <router-outlet></router-outlet>
+           <!-- <app-footer></app-footer> -->
+   </section>
+   <!-- Sidebar -->
+ </div>
+

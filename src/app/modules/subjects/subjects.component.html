@@ -1,0 +1,115 @@
+<div class="subjects">
+    <div class="head">
+        <div class="heading">
+            <h1>ALL Subjects</h1>
+            <p-breadcrumb [model]="items"></p-breadcrumb>
+        </div>
+        <div class="buttons">
+            <button class="btn"><i class="pi pi-cloud-download"></i>Download</button>
+        </div>
+    </div>
+ 
+    <div class="main-table">
+        <!-- <div class="card">
+            <p-table [value]="courses"  
+            [virtualScroll]="true"
+            [scrollable]="true" 
+            [rows]="50" 
+             scrollHeight="470px"
+            [virtualScroll]="true"
+            [virtualRowHeight]="30"
+            >
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="year">Year <p-sortIcon field="year"></p-sortIcon></th>
+                        <th pSortableColumn="subjectName">Subject <p-sortIcon field="subjectName"></p-sortIcon></th>
+                        <th pSortableColumn="subSubject">Sub Subject <p-sortIcon field="subSubject"></p-sortIcon></th>
+                        <th pSortableColumn="action">Action <p-sortIcon field="action"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-courses>
+                    <tr>
+                        <td>{{courses.year}}</td>
+                        <td>{{courses.subjectName}}</td>
+                        <td>{{courses.subSubject}}</td>
+
+                        <td>
+                            <button pButton type="button" icon="pi pi-pencil"  class="p-button-raised"></button>
+                            <button pButton type="button" icon="pi pi-trash" class="p-button-raised"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div> -->
+        
+            <div class="card">
+                <p-table [value]="subjects"  #dt1
+                styleClass="p-datatable-gridlines"
+                dataKey="id"
+                [rows]="5" 
+                [loading]="loading"
+                [showCurrentPageReport]="true"
+                [paginator]="true"
+            [rowHover]="true"
+                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                [globalFilterFields]="['name','country.name','representative.name','status']">
+                >
+                <ng-template pTemplate="caption">
+                    <div class="flex">
+                
+                        <span>
+                            <button class="btn" (click)="showBasicDialog2()"> <i class="pi pi-user-plus"></i> Add Subject</button>
+                        </span>
+                        <span class="p-input-icon-left ml-auto">
+                            <i class="pi pi-search"></i>
+                            <input pInputText type="text" (input)="dt1.filterGlobal($event, 'contains')" placeholder="Search keyword" />
+                        </span>
+    
+                    </div>
+                </ng-template>
+    
+    
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th pSortableColumn="year">Year <p-sortIcon field="year"></p-sortIcon></th>
+                            <th pSortableColumn="subjectName">Subject <p-sortIcon field="subjectName"></p-sortIcon></th>
+                            <th pSortableColumn="subSubject">Sub Subject <p-sortIcon field="subSubject"></p-sortIcon></th>
+                            <th pSortableColumn="action">Action <p-sortIcon field="action"></p-sortIcon></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-subjects>
+                        <tr [routerLink]="['/studentinfo', subjects.id]" style="cursor: pointer;">
+                            <td>{{subjects.year}}</td>
+                            <td>{{subjects.subjectName}}</td>
+                            <td>{{subjects.subSubject}}</td>
+
+                            <td style="text-align:center;">
+                                <i class="pi pi-pencil st-icon"></i>
+                                <i class="pi pi-trash st-icon"></i>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+    </div>
+</div>
+
+
+<p-dialog header="Add a New Subject" [(visible)]="displayBasic2" [modal]="true" [style]="{width: '30vw'}" [baseZIndex]="99990000">
+   <form [formGroup]="addCourses">
+    <div class="form-course">
+        <div class="col-12 md:col-12 lg:col-12">
+            <input type="text" formControlName="year" placeholder="Year" />
+        </div>
+        <div class="col-12 md:col-12 lg:col-12">
+            <input type="text" formControlName="subject" placeholder="Subject" />
+        </div>
+        <div class="col-12 md:col-12 lg:col-12">
+            <input type="text" formControlName="subSubject" placeholder="Sub Subject" />
+        </div>
+    </div>
+   </form>
+
+   <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="onClick()" label="Add Subject" class="button "></p-button>
+</ng-template>
+</p-dialog>

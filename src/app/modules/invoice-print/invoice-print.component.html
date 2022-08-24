@@ -1,0 +1,104 @@
+<p>invoice-print works!</p>
+
+<div class="invoice">
+    <div class="head">
+        <div class="heading">
+            <h1>Print / Download Invoice ({{singleStudentPayment.studentId}})</h1>
+            <p-breadcrumb [model]="items"></p-breadcrumb>
+        </div>
+        <div class="buttons">
+            <button class="btn" routerLink="/newinvoice"><i class="pi pi-user-edit"></i>Create New Invoice</button>
+            <button class="btn" [routerLink]="['/studentinfo', singleStudentPayment.studentId]" ><i class="pi pi-user"></i>View Profile</button>
+            <button class="btn"><i class="pi pi-users"></i>Student List</button>
+        </div>
+    </div>
+ 
+    <div class="form-main"  #content>
+
+        <div class="grid" style="display: flex; justify-content:center">
+            <div class="col-12 md:col-8 lg:col-7 download" #content>
+                <div class="download-header">
+                  <div class="left">
+                      <img src="../../../assets/header/logo.svg" alt="">
+                      <p>Students Name</p>
+                      <p>Students ID : {{singleStudentPayment.studentId}}</p>
+                  </div>
+                  <div class="right">
+                     <P> Incoice# :{{singleStudentPayment.studentId}}</P>
+                     <P> Incoice Status : FS-0025</P>
+                     <P> Date : 24 June 2022</P>
+                     <P> Payment Period : 26 June 2022</P>
+                  </div>
+                </div>
+      
+      
+                <div class="download-table">
+                  <table>
+                      <h3>Payment History</h3>
+                      <tr>
+                        <th class="up-th">Type</th>
+                        <th class="up-th">Amount</th>
+                        <th class="up-th">Date</th>
+                        <th class="up-th">Collected By</th>
+                      </tr>
+                      <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                        <td>Germany</td>
+                      </tr>
+                      <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Germany</td>
+                        <td>Mexico</td>
+
+                      </tr>
+                      
+                    </table>
+      
+                    <table>
+                      <h3>Payment Summary</h3>
+                      <tr>
+                        <th class="low-th">Payment Period</th>
+                        <td>Alfreds Futterkiste</td>
+                      </tr>
+                      <tr>
+                          <th class="low-th">Fees</th>
+                          <td>$ 200</td>
+                      </tr>
+                      <tr>
+                          <th class="low-th">Previous Due</th>
+                          <td>$ 500</td>
+                      </tr>
+                      <tr>
+                          <th class="low-th">Discount</th>
+                          <td>$ 50</td>
+                      </tr>
+                      <tr>
+                          <th class="low-th">Total Payable</th>
+                          <td>$ 600</td>
+                      </tr>
+                  </table>
+      
+                  <textarea [rows]="5" [cols]="30" pInputTextarea placeholder="Write a note here..."></textarea>
+      
+                      <div class="invoice-btns">
+                          <button  type="button" icon="pi pi-eye"  class=" invoice-btn">Print</button>
+                          <button  type="button" icon="pi pi-eye"  class=" invoice-btn">Email</button>
+                          <button  type="button" icon="pi pi-eye"  class=" invoice-btn" (click)="makePdf()" >Download PDF</button>
+                          <button  type="button" icon="pi pi-eye"  class=" invoice-btn">Close</button>
+                      </div>
+      
+                </div>
+          </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+

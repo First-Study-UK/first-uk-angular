@@ -1,0 +1,9 @@
+{
+    "data": [
+        {"invoiceid": "FS-0025", "date":"01", "status": "Orange"},
+        {"invoiceid": "FS-0028", "date": "02", "status": "Black"},
+        {"invoiceid": "FS-0028", "date": "03", "status": "Gray"},
+        {"invoiceid": "FS-0027", "date": "04", "status": "Blue"},
+        {"invoiceid": "FS-0021", "date": "05", "status": "Orange"}
+    ]
+}

@@ -1,0 +1,140 @@
+
+<div class="invoice">
+    <div class="head">
+        <div class="heading">
+            <h1>New Invoice</h1>
+            <p-breadcrumb [model]="items"></p-breadcrumb>
+        </div>
+        <div class="buttons">
+            <button class="btn" routerLink="/students"><i class="pi pi-users"></i>Student List</button>
+            <button class="btn" routerLink="/dashboard"><i class="pi pi-users"></i>Dashboard</button>
+            <button class="btn" (click)="makePdf()" ><i class="pi pi-users"></i>Download PDF</button>
+        </div>
+    </div>
+ 
+    <div class="form-main">
+
+    <form [formGroup]="addInvoice" (ngSubmit)="onSubmit()">
+    <div class="form-main" id="content" #content>
+        <div class="grid" style="display: flex;">
+            <div class="col-12 md:col-8 lg:col-7">
+                <div class="grid invoice-form">
+                    <div class="col-12 md:col-12 lg:col-12 ">
+                        <label for="float-input">Student Name</label>
+                        <!-- <input type="text" formControlName="studentName" pInputText class="p-inputtext-sm" placeholder="Student Name">   -->
+                        <p-autoComplete inputStyleClass="selct" formControlName="studentName" field="label" [(ngModel)]="results" placeholder="Search Student by Name" #e (onSelect)="searchSelected(e.value)"  [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+                    </div>
+                    <div class="col-12 md:col-4 lg:col-4 ">
+                        <label for="float-input">Student ID</label>
+                        <input type="text" 
+                        [value]="id" 
+                        formControlName="studentId" 
+                        pInputText 
+                        class="p-inputtext-sm" 
+                        placeholder="Student ID"
+                        [(ngModel)]="id"
+                        >  
+                       <!-- onKeyUp -->
+                    </div>
+                    <div class="col-12 md:col-4 lg:col-4 ">
+                        <label for="float-input">Enrolment Date</label>
+                        <input type="text"
+                         [value]="enroll"
+                          formControlName="enrolmentDate"  
+                          pInputText 
+                          [(ngModel)]="enroll"
+                          class="p-inputtext-sm" 
+                          placeholder="Enrolment Date">  
+                    </div>
+                    <div class="col-12 md:col-4 lg:col-4 ">
+                        <label for="float-input">End Date</label>
+                        <input type="text"
+                        [value]="end"
+                         formControlName="endDate"
+                         pInputText 
+                         class="p-inputtext-sm" 
+                         placeholder="End Date">  
+                    </div>
+                    <div class="col-12 md:col-6 lg:col-6 ">
+                        <label for="float-input">Fees</label>
+                        <p-inputNumber formControlName="fees"  [(ngModel)]="currency" placeholder="Fees" class="p-inputtext-sm" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
+                    </div>
+                    <div class="col-12 md:col-6 lg:col-6">
+                        <label for="float-input">Discount</label>
+                        <p-inputNumber formControlName="discount" #event (onInput)="discountPercent(discount)" [(ngModel)]="discount" prefix="%"  placeholder="Discount" class="p-inputtext-sm"></p-inputNumber>  
+                    </div>
+                    <div class="col-12 md:col-6 lg:col-6 ">
+                        <label for="float-input">Payment Method</label>
+                        <p-dropdown formControlName="paymentMethod"  [options]="paymentMethods" [(ngModel)]="selectedPaymentMethods" optionLabel="name"></p-dropdown>
+                    </div>
+                    <div class="col-12 md:col-6 lg:col-6">
+                        <label for="float-input">Status</label>
+                        <p-dropdown formControlName="status" [options]="paymentStatus" [(ngModel)]="selectedPaymentStatus" optionLabel="name"></p-dropdown>
+                    </div>
+                    <div class="col-12 md:col-6 lg:col-6 ">
+                        <label for="float-input">Invoice ID</label>
+                        <input type="text" formControlName="invoiceId" pInputText class="p-inputtext-sm" placeholder="Invoice ID">  
+                    </div>
+                    <div class="col-12 md:col-6 lg:col-6">
+                        <label for="float-input">Total Payable</label>
+                        <p-inputNumber formControlName="totalPayable" [(ngModel)]="currency" placeholder="Total Payable" class="p-inputtext-sm" mode="currency" currency="USD" locale="en-US"></p-inputNumber>               
+                    </div>
+                    <div class="col-12 md:col-12 lg:col-12 ">
+                        <label for="float-input">Note</label>
+                        <textarea formControlName="Note" rows="5" cols="30" pInputTextarea></textarea>
+                    </div>
+                      <button class="btn"><i class=""></i>Received Payment</button>
+                </div>
+                
+                
+            </div>
+            <!-- <div class="col-12 md:col-6 lg:col-6">
+                <div class="recent-payment">
+                   <h3>Recent Invoices</h3>
+                <div class="recent-payment-table">
+                    <div class="card">
+                        <p-table [value]="recentPayment"  
+                        [virtualScroll]="true"
+                        [scrollable]="true" 
+                        [rows]="50" 
+                         scrollHeight="470px"
+                        [virtualScroll]="true"
+                        [virtualRowHeight]="30"
+                        >
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th pSortableColumn="invoiceid">Invoice ID<p-sortIcon field="invoiceid"></p-sortIcon></th>
+                                    <th pSortableColumn="date">Date <p-sortIcon field="date"></p-sortIcon></th>
+                                    <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
+                                    <th pSortableColumn="action">Action <p-sortIcon field="action"></p-sortIcon></th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-courses>
+                                <tr>
+                                    <td>{{recentPayment}}</td>
+                                    <td>{{recentPayment}}</td>
+                                    <td>{{recentPayment}}</td>
+
+                                    <td>
+                                        <button pButton type="button" icon="pi pi-eye"  class="p-button-raised"></button>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </div>
+
+                </div>
+            </div> -->
+        </div>
+    </div>
+</form>
+
+
+    </div>
+</div>
+
+
+
+
+

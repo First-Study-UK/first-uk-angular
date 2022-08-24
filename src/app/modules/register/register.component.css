@@ -1,0 +1,62 @@
+.register{
+    padding: 85px 30px 20px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+.heading h1{
+    font-size: 25px;
+    color: rgba(40, 43, 108, 1);
+}
+.main-table{
+    margin-top: 20px;
+    padding: 30px 50px ;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.p-inputtext {
+    width: 100%;
+    padding: 11px 30px!important;
+    font-size: 14px!important;
+}
+
+.st-icon{
+    font-size: 14px!important;
+    margin-right: 10px;
+    transition: 0.1s;
+}
+.st-icon:hover{
+    font-size: 16px!important;
+    font-weight: 600;
+}
+
+input{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(230, 230, 230);
+    width: 100%;
+}
+
+input:focus{
+  outline: none;
+}
+
+.form-register{
+    margin-top: 15px;
+}
+.p-dialog .p-dialog-content{
+    padding: 20px;
+}
+.p-multiselect{
+    width: 100%!important;
+}
+.reg-btn{
+    margin: 20px 15px;
+    width: 94%;
+}

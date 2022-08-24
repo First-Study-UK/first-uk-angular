@@ -1,0 +1,171 @@
+
+.invoice{
+    padding: 85px 30px 20px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    width: 78.5%;
+    padding: 0px 0;
+    background: #F3F4FF;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    z-index: 99999;
+    align-items: center;
+}
+
+.heading{
+    color: #282B6C;
+}
+
+h1{
+    font-size: 25px;
+}
+
+.in-form{
+    display: flex;
+    justify-content: space-around;
+}
+
+.form-heading{
+    font-size: 18px;
+    font-weight: 500;
+    color: #282B6C;
+    border-bottom: 2px solid #dfdfdf;
+    padding: 30px;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 30px;
+}
+
+.form-main{
+margin-top: 90px;
+}
+
+
+
+.invoice-form{
+    padding: 30px;
+    border-radius: 10px;
+    background: white;
+}
+
+
+.recent-payment{
+    padding: 30px;
+    border-radius: 10px;
+    background: white;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.recent-payment h3{
+
+    color: rgba(40, 43, 108, 1);
+    font-size: 18px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    padding-bottom: 20px;
+
+
+}
+.download-table{
+    height: 70vh;
+    overflow: hidden;
+}
+.download-header{
+display: flex;
+justify-content: space-between;
+width: 100%;
+align-items: center;
+padding: 20px;
+}
+.download-header p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #808082;
+    line-height: 24px;
+}
+
+
+.download-header .left img{
+width: 140px;
+}
+
+.download-header .right{
+    text-align: right;
+}
+
+.download-table table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #dddddd;
+    margin-top: 25px;
+  }
+  
+  .download-table table h3{
+   padding: 15px;
+   font-size: 16px;
+   color: #0A0B1B;
+  }
+
+  .download-table td, th {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .download-table tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+
+
+  .download-table .p-inputtextarea{
+    margin-top: 25px!important;
+  }
+
+
+
+
+
+
+
+
+
+input{
+    border-radius: 5px;
+    border: 1px solid rgb(230, 230, 230);
+    width: 100%;
+    margin-top: 3px;
+}
+
+input:focus{
+  outline: none;
+}
+
+
+table{
+    border: 1px solid rgb(227, 227, 227);
+}
+
+.form-main .up-th {
+    background: #e8e8e8;
+    padding:10px 15px ;
+    border: 1px solid #f6f6f6;
+    font-size: 14px;
+    font-weight: 500;
+   }
+
+ .form-main td {
+    border: 1px solid rgb(227, 227, 227);
+   text-align: left;
+   padding: 8px 15px;
+   font-size: 12px;
+
+ }

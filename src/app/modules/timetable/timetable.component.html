@@ -1,0 +1,56 @@
+<p>timetable works!</p>
+
+<div class="accounts">
+    <div class="head">
+        <div class="heading">
+            <h1>Timetable</h1>
+            <p-breadcrumb [model]="items"></p-breadcrumb> 
+        </div>
+        <div class="buttons">
+            <button class="btn"><i class="pi pi-cloud-download"></i>Export</button>
+        </div>
+    </div>
+ 
+    <div class="main-table">
+        <div class="timeline" >
+            <full-calendar [options]="calendarOptions"></full-calendar>     
+        </div>
+    </div>
+</div>
+
+                <!-- Timetable -->
+                <p-dialog header="Timetable" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}">
+      
+                    <p *ngFor="let item of posts">
+                        {{item.subject}}
+                      </p>
+                      
+                      <table class="register-table">
+                        <tr>
+                            <th class="up-th">Schedule Day</th>
+                            <th class="up-th">Schedule Time</th>
+                            <th class="up-th">Subject</th>
+                            <th class="up-th">Sub Subject</th>
+                            <th class="up-th">Tutors Name</th>
+                            <th class="up-th">Teacher Id</th>
+                        </tr>
+                        <tr>
+                            <td>Monday</td>
+                            <td>01.00pm</td>
+                            <td>Math</td>
+                            <td></td>
+                            <td>Maria Anders</td>
+                            <td>TS-1001</td>
+                        </tr>
+    
+                        <tr>
+                            <td>Monday</td>
+                            <td>03.00pm</td>
+                            <td>English</td>
+                            <td></td>
+                            <td>John</td>
+                            <td>TS-1002</td>
+                        </tr> 
+                    </table>
+    
+                </p-dialog>    

@@ -1,0 +1,67 @@
+p{
+    font-family: 'Inter', sans-serif;
+}
+.subjects{
+    padding: 90px 30px 70px;
+    margin-left: auto;
+    width: 82.5%;
+    font-family: 'Inter', sans-serif;
+}
+
+.head{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.main-table{
+    margin-top: 20px;
+}
+
+.heading{
+    color: #282B6C;
+}
+
+h1{
+    font-size: 25px;
+}
+
+
+.form-area{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.form-heading{
+    font-size: 18px;
+    font-weight: 500;
+    color: #282B6C;
+    border-bottom: 2px solid #dfdfdf;
+    padding: 30px;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 30px;
+}
+
+.form-main{
+padding: 30px;
+background: white;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+.form-course{
+    margin-top: 15px;
+}
+
+input{
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(230, 230, 230);
+    width: 100%;
+}
+
+input:focus{
+  outline: none;
+}

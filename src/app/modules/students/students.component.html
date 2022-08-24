@@ -1,0 +1,97 @@
+<div class="students">
+    <div class="head">
+        <div class="heading">
+            <h1>ALL Students</h1>
+         <p-breadcrumb [model]="items"></p-breadcrumb> 
+        </div>
+        <div class="buttons">
+            <button class="btn download-btn"><i class="pi pi-cloud-download"></i>Download</button>
+            <div class="download-dropdown">
+                <!-- <ul>
+                    <li > <i class="pi pi-file-pdf"></i> PDF</li>
+                    <li ><i class="pi pi-file-excel"></i> EXCLE</li>
+                    <li ><i class="pi pi-check"></i> CSV</li>
+                </ul> -->
+            </div>
+            <button class="btn" routerLink="/newinvoice"><i class="pi pi-file-pdf"></i>Create Invoice</button>
+            <button class="btn"><i class="pi pi-check"></i>Status</button>
+        </div>
+    </div>
+ 
+    <div class="main-table">
+        <div class="card">
+            <p-table [value]="students"  #dt1
+            styleClass="p-datatable-gridlines"
+            dataKey="id"
+            [rows]="6" 
+            [showCurrentPageReport]="true"
+            [paginator]="true"
+            [rowHover]="true"
+            [loading]="loading"
+            [globalFilterFields]="['studentname','subject','schedualeday','action']"
+            >
+            
+              <ng-template pTemplate="caption">
+                <div class="flex">
+            
+                    <span>
+                        <button class="btn"  routerLink="/addstudent"> <i class="pi pi-user-plus"></i> Add Student</button>
+                    </span>
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt1.filterGlobal($event, 'contains')" placeholder="Search keyword" />
+                    </span>
+
+                </div>
+               </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="id" >ID <p-sortIcon field="id"></p-sortIcon></th>
+                        <th pSortableColumn="studentname">Student Name <p-sortIcon field="studentname"></p-sortIcon></th>
+                        <th pSortableColumn="year">Subject <p-sortIcon field="year"></p-sortIcon></th>
+                        <th pSortableColumn="subject">Year <p-sortIcon field="subject"></p-sortIcon></th>
+                        <th pSortableColumn="schedualeday">Schedule Day <p-sortIcon field="schedualeday"></p-sortIcon></th>
+                        <th pSortableColumn="schedualetime">Schedule Time <p-sortIcon field="schedualetime"></p-sortIcon></th>
+                        <th pSortableColumn="action">Action <p-sortIcon field="action"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-students>
+                    <tr  style="cursor: pointer;">
+                        <td [routerLink]="['/studentinfo', students.studentInfo.studentId]">{{students.studentInfo.studentId}}</td>
+                        <td [routerLink]="['/studentinfo', students.studentInfo.studentId]">{{students.studentInfo.fullName}}</td>
+                        <td>
+                            <span *ngFor="let s of students.selectedSubject">
+                                 <p-tag 
+                                 styleClass="mr-1" 
+                                 severity="success" 
+                                 [value]="s.selectedClass.subject"></p-tag>  
+                            </span>
+                        </td>
+                        <td>Year {{students.studentInfo.year}}</td>
+                        <td >
+                            <span *ngFor="let s of students.selectedSubject">
+                                <p-tag 
+                                styleClass="mr-1" 
+                                severity="success" 
+                                [value]="s.selectedClass.scheduleDay"></p-tag>  
+                            </span>
+                        </td>
+                        <td > 
+                            <span *ngFor="let s of students.selectedSubject">
+                                <p-tag 
+                                styleClass="mr-1"
+                                severity="success" 
+                                [value]="s.selectedClass.scheduleTime"></p-tag>  
+                                </span>
+                            </td>
+                        <td style="text-align:center;">
+                            <i class="pi pi-pencil st-icon"></i>
+                            <i (click)="studentDelete(students.studentInfo.studentId)" class="pi pi-trash st-icon"></i>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div> 
+    </div>
+</div>
+

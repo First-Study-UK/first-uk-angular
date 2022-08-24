@@ -1,0 +1,479 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #F3F4FF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.heading{
+    font-size:25px;
+    color: #081131;
+}
+
+.grid{
+    margin: 0!important;
+}
+
+.sub-heading{
+    margin-top: 5px;
+    font-weight: 400;
+    color: #081131;
+    font-size:18px;
+}
+
+.p-panelmenu .p-panelmenu-header > a:hover{
+    color: red;
+}
+.p-panelmenu .p-panelmenu-header > a {
+    transition: 0.2s!important;
+    font-size: 15px!important;
+    background: none!important;
+    font-weight: 600!important;
+}
+
+.p-panelmenu .p-panelmenu-header.p-highlight:not(.p-disabled) > a {
+    color: #ffffff!important;
+    background: #282B6C!important;
+}
+
+/* .active{
+    background: red!important;
+} */
+.p-panelmenu .p-panelmenu-header > a:focus {
+    box-shadow: none!important;
+}
+.p-panelmenu .p-panelmenu-header > a .p-panelmenu-icon {
+    display: none!important;
+}
+
+ .p-inputtext{
+    width: 100%;
+    padding: 10px 15px!important;
+    font-size: 14px!important;
+}
+.p-inputtext::placeholder{
+    color: #b2b2b2;
+}
+
+
+ .p-float-label label
+{
+    font-size: 16px!important;
+    color: #595b80!important;
+}
+
+.p-inputtext:enabled:hover
+{
+    border-color: #282B6C!important;
+}
+
+.p-inputtext:enabled:focus
+ {
+    box-shadow: none!important;
+    border-color: none!important;
+}
+
+.p-menuitem-icon{
+    font-size: 16px!important;
+}
+
+.p-calendar
+{
+    width: 100%!important;
+    display: block!important;
+}
+
+.p-calendar .p-inputtext
+{
+    background-color: #f9f9f9!important;
+}
+
+.add-student .p-dropdown:not(.p-disabled):hover, 
+.add-teacher .p-dropdown:not(.p-disabled):hover,
+.student-info .p-dropdown:not(.p-disabled):hover
+{
+    border-color: #282B6C!important;
+
+}
+ .p-dropdown:not(.p-disabled).p-focus
+{
+    border-color: none!important;
+    box-shadow: none!important;
+}
+.add-student .p-dropdown,
+.add-teacher .p-dropdown
+.student-info .p-dropdown
+{
+    background-color: #f9f9f9!important;
+    width: 100%!important;
+}
+
+.p-dropdown{
+    display: flex!important;
+}
+
+.p-multiselect 
+
+{
+    width: 100%!important;
+}
+
+.menubar .p-menuitem-link .p-menuitem-text{
+    color: rgb(255, 255, 255)!important;
+    }
+
+    .p-menuitem-link:hover{
+        background: rgb(35, 29, 91)!important;
+    }
+
+    .p-panelmenu .p-panelmenu-content .p-menuitem .p-menuitem-link:focus {
+        box-shadow: none!important;
+    }
+
+
+.p-menuitem-link .p-menuitem-text{
+font-size: 14px;
+color: rgb(148, 148, 148)!important;
+font-weight: 600;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+    color: #282B6C!important;
+    background: #e5e7ff58!important;
+  }
+
+
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover a {
+    color: #081131!important;
+  }
+
+.p-dialog{
+    box-shadow: 0px 13px 25px 0px rgba(40, 43, 108, 0.25)!important;
+}
+.p-dialog .p-dialog-header{
+    border-bottom: 1px solid gray!important;
+    color: #282B6C!important;
+}
+.p-inputnumber {
+    display: block!important;
+    width: 100%!important;
+  }
+
+.field > label{
+    display: block!important;
+    font-size: 13px!important;
+}
+.p-dialog-content {
+    overflow:visible!important;;
+  }
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+    background: rgba(40, 43, 108, 1)!important;
+    color: #ffffff!important;
+}
+.p-tabview .p-tabview-nav{
+    background-color: transparent!important;
+    border: none!important;
+}
+.p-tabview .p-tabview-nav li .p-tabview-nav-link{
+    background: transparent!important;
+    margin-right: 10px;
+    border: none!important;
+    padding: 15px!important;
+    font-weight: 600!important;
+}
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+    box-shadow:none!important;
+}
+
+.p-tabview-nav {
+    padding: 20px 0!important;
+}
+
+.p-tabview .p-tabview-nav .p-tabview-ink-bar {
+   display:none!important;
+}
+
+.p-tabview .p-tabview-panels {
+    background: transparent!important;
+    padding: 0!important;
+}
+
+.p-calendar .p-inputtext{
+    width: 100%!important;
+   }
+   .p-breadcrumb {
+    background: none!important;
+    border: none!important;
+    padding: 0!important;
+   }
+.pi-home{
+    margin-right: 5px;
+}
+
+.btn{
+    padding: 8px 15px;
+    background: #282B6C;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 5px;
+    margin: 0 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 1px;
+    box-shadow: 0px 13px 25px rgba(40, 43, 108, 0.25);
+    transition: .3s;
+    border: 1px solid #282B6C;
+}
+
+.btn:hover{
+    box-shadow: none;
+    color: #282B6C;
+    background: white;
+    border: 1px solid #282B6C;
+}
+
+.btn i{
+    margin-right: 5px;
+    font-weight: 400;
+}
+
+
+
+.p-datatable .p-sortable-column.p-highlight {
+    background: #ffffff!important;
+    color:#282B6C!important;
+  }
+
+  .p-datatable .p-sortable-column:focus {
+    box-shadow: none!important
+  }
+
+  .p-splitbutton-defaultbutton,
+  .p-splitbutton-menubutton{
+    background: #282B6C!important;
+    border: none!important;
+  }
+
+.p-button:focus {
+    box-shadow: none!important;
+  }
+
+
+.p-multiselect .p-multiselect-label {
+    padding: 10px 15px!important;
+    font-size: 14px!important;
+}
+
+
+
+.p-button-label{
+    font-size: 13px!important;
+    font-weight: 600!important;
+    color: white;
+}
+.p-button-raised{
+background: #282B6C!important;
+border: none!important;
+padding: 6px 0px!important;
+margin-right: 5px!important;
+
+}
+.p-button-raised .pi{
+    font-size: 10px!important;
+}
+.p-button.p-button-icon-only {
+    width: 2rem!important;
+}
+.p-datatable-table{
+    border: 1px solid  #e8e8e8!important;
+}
+
+.p-datatable-table::-webkit-scrollbar {
+    display: none!important;
+  }
+
+  .p-datatable-table {
+    -ms-overflow-style: none!important;  /* IE and Edge */
+    scrollbar-width: none!important;  /* Firefox */
+  }
+
+
+.p-button {
+    padding: 10px 15px!important;
+    background: #282B6C!important;
+   border: none!important;
+}
+
+
+
+
+.sticon{
+    padding:5px!important;
+    background: #282B6C!important; 
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.sticon-y{
+    padding:5px!important;
+    background: rgba(253, 187, 56, 1)!important; 
+    border-radius: 3px;
+    font-size: 10px;
+    color: #081131;
+    cursor: pointer;
+}
+
+.p-datatable-header{
+    background: transparent!important;
+    border: none!important;
+}
+.p-sortable-column-icon,
+.p-dropdown-trigger-icon{
+    font-size: 11px!important;
+}
+/* .pi {
+    font-size: 11px!important;
+} */
+.p-datatable .p-paginator-bottom{
+    border: none!important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+    border-radius: 0!important;
+    min-width: 25px!important;
+    height: 25px!important;
+
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background: #282b6c !important;;
+    color: #ffffff!important;
+}
+
+.invoice-form label{
+   font-size: 12px;
+    }
+
+.invoice-form .p-inputtext
+    {
+        background-color: #f9f9f9!important;
+    }
+    .invoice-form .p-calendar{
+        margin-top: 3px;
+    }
+
+   
+   .p-inputwrapper{
+        display: block!important;
+        width: 100%!important;
+        margin-top: 3px;
+    }
+    .invoice-form  .p-inputtext-sm .p-inputtext{
+        width: 100%!important;
+        margin-top: 3px;
+
+    }
+
+    .invoice-form .p-dropdown-label{
+        padding: 8px 15px!important;
+    }
+    .p-inputtextarea{
+        width: 100%!important;
+        margin-top: 3px;
+        height: 80px;
+    }
+    
+    .invoice .p-dialog-mask{
+    align-items: inherit!important;
+  }
+
+
+  .invoice-download-print{
+    overflow: scroll;
+  }
+
+  .p-dialog .p-dialog-content{
+    padding: 0 50px 30px!important;
+  }
+
+  .create-new-invoice-form{
+    padding: 0px!important;
+  }
+
+  .invoice .p-button.p-button-icon-only {
+    display: block;
+  }
+
+  .header .p-inputtext {
+    padding: 10px 20px!important;
+    font-size: 15px!important;
+    width: 350px;
+
+  }
+
+  .header .pi-search{
+    font-size: 15px!important;
+    line-height: 15px;
+  }
+
+  .pi-search{
+    font-size: 12px!important;
+    line-height: 12px;
+  }
+
+  .menubar .p-panelmenu .p-panelmenu-content{
+    background: #282b6c !important;;
+  }
+
+  .p-paginator .p-dropdown{
+    display: none!important;
+  }
+
+  .p-inputtext.p-inputtext-sm {
+    font-size: 12px!important;
+    padding: 10px 12px!important;
+    border-radius: 3px!important;
+}
+
+.p-datatable .p-datatable-header{
+    padding-top:0!important;
+    padding-right:0!important;
+    padding-left:0!important;
+    padding-bottom: 20px!important;
+}
+.p-input-icon-left>i, .p-input-icon-right>i {
+    margin-top: -5px!important;
+}
+
+.p-component{
+    font-size: 14px!important;
+}
+.p-datepicker-inline{
+    width: 100%!important;
+}
+
+
+.p-autocomplete {
+    width: 100%!important;
+}
+
+.p-autocomplete-items{
+    z-index: 9999!important;
+}
+.p-tag{
+    font-weight: 500!important;
+    margin-bottom: 5px;
+}
+.p-component td{
+font-size: 14px;
+font-weight: 600;
+}

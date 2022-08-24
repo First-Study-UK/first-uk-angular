@@ -1,0 +1,292 @@
+<div class="add-student">
+    <h1 class="heading">Add New Student</h1>
+    <div class="form-area">
+        <form [formGroup]="addStudent"  (ngSubmit)="onSubmit()"  >
+    <!--  START PERSONAL INFO -->
+        <div class="head">
+            <h2 class=""><i class="pi pi-user"></i>Personal Information</h2>
+        </div>
+
+        
+        <div class="form-main">
+            <div class="image">
+                <img src="../../../assets/students/p1.png" alt="">
+                <div class="overlay">
+                    <i class="pi pi-upload"></i>
+                </div>
+            </div>
+            <p class="image-p">Max File Size 1 MB</p>
+            <div class="form-input personal-info">
+                <div class="grid">
+                    <div class="col-12 md:col-3 lg:col-3 field">
+                        <label for="float-input">Full Name</label>
+                        <input type="text" formControlName="fullname" pInputText placeholder="Full Name" class="p-inputtext-sm"  />
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-3 field">
+                        <label for="float-input">Student ID</label>
+                        <input type="text" [value]="studentID" formControlName="studentId" pInputText placeholder="Student ID" class="p-inputtext-sm"/>
+
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-3 field">
+                        <label for="float-input">Date of Birth</label>
+                        <p-calendar  appendTo="body"   formControlName="birthdate" dateFormat="dd/mm/yy" placeholder="Birthdate" ></p-calendar>
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-3 field">
+                        <label for="float-input">Gender</label>
+                        <p-dropdown class="p-inputtext-sm" formControlName="gender" placeholder="Gender" [options]="gender" optionLabel="name"></p-dropdown>
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-3 field">
+                        <label for="float-input">Mobile Number</label>
+                        <input type="text" formControlName="mobile" pInputText placeholder="Mobile Number" class="p-inputtext-sm"/>
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-3 field">
+                        <label for="float-input">Email</label>
+                        <input type="text" formControlName="email" pInputText placeholder="Email" class="p-inputtext-sm"/>
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-3 field">
+                        <label for="float-input">Address</label>
+                        <input type="text" formControlName="address"pInputText placeholder="Address" class="p-inputtext-sm"/>
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-3 field">
+                        <label for="float-input">Street/City</label>
+                        <input type="text" formControlName="street"pInputText placeholder="Street/City" class="p-inputtext-sm"/>
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-4 field">
+                        <label for="float-input">Post Code</label>
+                        <input type="text" formControlName="postcode" pInputText placeholder="Post Code" class="p-inputtext-sm"/>
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-4 field">
+                        <label for="float-input">Enrollment</label>
+                        <p-calendar class="input-calender p-inputtext-sm" formControlName="enroldate" placeholder="dd/mm/yy"></p-calendar>                  
+                    </div>
+
+                    <div class="col-12 md:col-3 lg:col-4 field">
+                        <label for="float-input">Year Group</label>
+                        <input type="text" formControlName="yeargroup" pInputText placeholder="Post Code" class="p-inputtext-sm"/>
+                        <!-- <p-multiSelect placeholder="Class" class="p-inputtext-sm" formControlName="yeargroup"  [options]="yearGroup" optionLabel="name" display="chip"></p-multiSelect> -->
+                    </div>
+
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Contact Person 1</label>
+                        <input type="text" formControlName="contact1" pInputText placeholder="Contact Person" class="p-inputtext-sm" />
+                    </div>
+
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Email of Person 1</label>
+                        <input type="text" formControlName="emailp1" pInputText placeholder="Email of Person 1" class="p-inputtext-sm"/>
+                    </div>
+
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Mobile Number 1</label>
+                        <input type="text" formControlName="mbl1" pInputText placeholder="Mobile Number 1" class="p-inputtext-sm"/>              
+                    </div>
+
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Contact Person 2</label>
+                        <input type="text" pInputText formControlName="contact2" placeholder="Contact Person" class="p-inputtext-sm" />
+                    </div>
+
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Email of Person 2</label>
+                        <input type="text" pInputText formControlName="emailp2" placeholder="Email of Person 1" class="p-inputtext-sm"/>
+                    </div>
+
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Mobile Number 2</label>
+                        <input type="text" pInputText formControlName="mbl2" placeholder="Mobile Number 2" class="p-inputtext-sm"/>
+                    </div>
+                   
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Allergies</label>
+                        <input type="text" formControlName="allergy" pInputText placeholder="Allergies" class="p-inputtext-sm" />
+                    </div>
+
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Medical Difficulties</label>
+                        <input type="text" pInputText formControlName="medical" placeholder="Medical Difficulties" class="p-inputtext-sm"/>
+                    </div>
+
+                    <div class="col-12 md:col-4 lg:col-4 field">
+                        <label for="float-input">Learning Difficulties</label>
+                        <input type="text" formControlName="learning" pInputText placeholder="Learning Difficulties" class="p-inputtext-sm"/>        
+                   </div>
+              </div>
+            </div>
+        </div>
+        
+         <!-- END PERSONAL INFO -->
+        <!--  ACADEMIC INFO -->
+            <div class="head">
+                <h2 class=""><i class="pi pi-pencil"></i>Academic Information</h2>
+            </div>
+            <div class="form-main academic-info">
+               <div class="form-input ">
+                            <div class="col-sm-12 table-responsive" formArrayName="selectedSubject">
+                            <form [formGroup]="selectedSubject" onsubmit="addMore()">  
+                                <table class="table">
+                                
+                                <tbody>
+                                  <tr style="background: rgb(247, 247, 247)">
+          
+                                    <td class="col-12 md:col-3 lg:col-3 field"> 
+                                        <p-dropdown placeholder="Teacher Name" 
+                                           class="p-inputtext-sm form-control"
+                                           formControlName="teacherId"  
+                                           [(ngModel)]="selectedTutors" 
+                                           [options]="tutors" 
+                                           optionValue="code" 
+                                           optionLabel="name"
+                                           #event
+                                           (onChange)="selectTeacher(event.value)"
+                                           >
+                                        </p-dropdown>
+                                    </td>
+                                    <td class="col-12 md:col-3 lg:col-3 field"> 
+                                    <p-dropdown placeholder="Schedule Time" 
+                                    class="p-inputtext-sm form-control" 
+                                    formControlName="scheduleTime" 
+                                    [options]="sctime" 
+                                    optionValue="name" 
+                                    optionLabel="name"
+                                    #time
+                                    (onChange)="selectTeacherTime(time.value)"
+                                    >
+                                  </p-dropdown>
+
+                                    </td>
+                                    <td class="col-12 md:col-2 lg:col-2 field"> 
+                                        <!-- <p-dropdown placeholder="Schedule Day" 
+                                         class="p-inputtext-sm form-control" 
+                                         formControlName="scheduleDay" 
+                                         [options]="day" 
+                                         optionLabel="name" 
+                                         optionValue="name" >
+                                       </p-dropdown> -->
+                                       <input type="text" 
+                                       pInputText 
+                                       [value]="day ? day : 'Scheduale Day'" 
+                                       />
+                                    </td>
+                                    <td class="col-12 md:col-2 lg:col-2 field"> 
+                                      <!-- <p-dropdown placeholder="Subject" 
+                                       class="p-inputtext-sm form-control" 
+                                       formControlName="subject" 
+                                       [options]="subject"
+                                       optionLabel="name" 
+                                       optionValue="name">
+                                      </p-dropdown>  -->
+                                      <input type="text"
+                                      pInputText 
+                                      [value]="subject ? subject : 'Subject'" 
+                                      />
+                                       </td>
+                                    <td class="col-12 md:col-2 lg:col-2 field"> 
+                                       <!-- <p-dropdown placeholder="Sub Subject"  
+                                       class="p-inputtext-sm form-control" 
+                                       optionValue="name" 
+                                       formControlName="subSubject"
+                                       [options]="subSubjects" 
+                                       optionLabel="name">
+                                       </p-dropdown>  -->
+                                       <input type="text" 
+                                       pInputText 
+                                       [value]="subSubject ? subSubject : 'Sub-Subject'" 
+                                       />
+                                    </td>
+                                    <td>
+                                        <input type="text" 
+                                        pInputText 
+                                        formControlName="selectedClassId"
+                                        [(ngModel)]="finalSelectedSubjectId"
+                                        />
+                                    </td>
+
+                                    <td class="col-12 md:col-2 lg:col-2" style="display:flex"> 
+                                        <!-- <button *ngIf="getItemRow.length > 1" (click)="deleteRow(i)" class="btn btn-danger"><i class="pi pi-minus" aria-hidden="true"></i></button> -->
+                                        <button style="margin-top: 7px;" type="button"
+                                         (click)="addMore()" 
+                                         class="btn btn-primary">
+                                         <i class="pi pi-plus" aria-hidden="true">
+                                         
+                                        </i>
+                                    </button>
+                                    </td>
+                                </tr>
+
+                                
+
+                                </tbody>
+                              </table>
+                            </form>  
+                              <div class="card" *ngIf="subjectsData.length > 0">
+                                <p-table [value]="subjectsData"  #dt1
+                                styleClass="p-datatable-gridlines"
+                                dataKey="id"
+                                [rows]="20" 
+                                [showCurrentPageReport]="true"
+                                [rowHover]="true"
+                                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                                [globalFilterFields]="['studentname','subject','schedualeday','action']">
+                                >
+                                  <ng-template pTemplate="caption">
+                                    <div class="flex">
+                                
+                                    
+                                    </div>
+                                   </ng-template>
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th pSortableColumn="tutorName" >Tutor Name<p-sortIcon field="tutorName"></p-sortIcon></th>
+                                            <th pSortableColumn="scheduleTime" >Schedule Time <p-sortIcon field="scheduleTime"></p-sortIcon></th>
+                                            <th pSortableColumn="scheduleDay">Schedule Day <p-sortIcon field="scheduleDay"></p-sortIcon></th>
+                                            <th pSortableColumn="subject">Subject <p-sortIcon field="subject"></p-sortIcon></th>
+                                            <th pSortableColumn="subSubject">Sub Subject <p-sortIcon field="subSubject"></p-sortIcon></th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-schedule>
+                                        <tr  style="cursor: pointer;">
+                                            <td>{{schedule.tutorName}}</td>
+                                            <td>{{schedule.scheduleTime}}</td>
+                                            <td>{{schedule.scheduleDay}}</td>
+                                            <td>{{schedule.subject}}</td>
+                                            <td>{{schedule.subSubject}}</td>
+                                          
+                                            <td style="text-align:center;">
+                                                <i class="pi pi-pencil st-icon"></i>
+                                                <i class="pi pi-trash st-icon"></i>
+                                            </td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div> 
+                           </div>
+                        
+
+            </div>
+       <!-- END ACADEMIC INFO -->
+        <!--  OTHER INFO -->
+        <div class="form-main academic-info">
+            <div class="form-input ">
+                <div class="grid">
+                   
+                </div>
+            </div>
+        </div>
+        </div>
+       <!-- END OTHER INFO -->
+       <button class="form-button" type="submit"  >Submit</button>
+
+       
+      
+        </form>
+    </div>
+

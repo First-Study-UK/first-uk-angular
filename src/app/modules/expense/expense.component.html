@@ -1,0 +1,88 @@
+
+<div class="accounts">
+    <div class="head">
+        <div class="heading">
+            <h1>Accounts</h1>
+            <p-breadcrumb [model]="items"></p-breadcrumb> 
+        </div>
+        <div class="buttons">
+            <button class="btn"><i class="pi pi-cloud-download"></i>Export</button>
+        </div>
+    </div>
+ 
+    <div class="main-table">
+        <div class="card">
+            <p-table [value]="allExpense"  #dt1
+            styleClass="p-datatable-gridlines"
+            dataKey="id"
+            [rows]="8" 
+            [showCurrentPageReport]="true"
+            [paginator]="true"
+            [rowHover]="true"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+            [globalFilterFields]="['studentname','subject','schedualeday','action']">
+            >
+            <ng-template pTemplate="caption">
+                <div class="flex">
+            
+                    <span>
+                        <button class="btn" (click)="showAddExpense()"> <i class="pi pi-user-plus"></i>Add Expense</button>
+                    </span>
+                    <span class="p-input-icon-left ml-auto">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" (input)="dt1.filterGlobal($event, 'contains')" placeholder="Search keyword" />
+                    </span>
+
+                </div>
+            </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="date">Date <p-sortIcon field="date"></p-sortIcon></th>
+                        <th pSortableColumn="typeOfExpense">Type Of Expense <p-sortIcon field="typeOfExpense"></p-sortIcon></th>
+                        <th pSortableColumn="description">Description <p-sortIcon field="description"></p-sortIcon></th>
+                        <th pSortableColumn="amount">Amount <p-sortIcon field="amount"></p-sortIcon></th>
+                        <th pSortableColumn="action">Action <p-sortIcon field="action"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-allExpense>
+                    <tr style="cursor: pointer;">
+                            <td>{{allExpense.date}}</td>
+                            <td>{{allExpense.expenseType}}</td>
+                            <td>{{allExpense.description}}</td>
+                            <td>$.{{allExpense.amount}}</td>
+                            <td style="text-align:center;">
+                                <i class="pi pi-pencil st-icon"></i>
+                                <i class="pi pi-trash st-icon"></i>
+                            </td>
+
+                    </tr>
+                </ng-template>
+            </p-table>
+
+            <div class="total-card">
+                <img src="../../../assets/income/icon.png" alt="">
+                <div class="text">
+                     <p>Total Income</p>
+                     <h2>${{totalExpense}}</h2>
+                </div>
+             </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<p-dialog header="Add Expense" [(visible)]="display" [modal]="true" [style]="{width: '30vw'}">
+    <form style="margin-top:15px ;">
+        <label for="float-input">Date</label>
+        <input type="text"  pInputText placeholder="Date" class="p-inputtext-sm expense-in "/>
+        <label for="float-input">Type Of Expense</label>
+        <input type="text"  pInputText placeholder="Type Of Expense" class="p-inputtext-sm expense-in"/>
+        <label for="float-input">Description</label>
+        <input type="text"  pInputText placeholder="Description" class="p-inputtext-sm expense-in"/>
+        <label for="float-input">Amount</label>
+        <input type="text"  pInputText placeholder="Amount" class="p-inputtext-sm expense-in"/>
+    </form>
+    <button pButton type="button" class="p-button-raised ex-btn" label="Submit"></button>
+</p-dialog>

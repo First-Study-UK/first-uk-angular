@@ -1,0 +1,117 @@
+.content-area{
+    background: white;
+    padding: 30px 20px;
+    color:rgb(38, 38, 38) ;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+.quick-buttons{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.quick-single-button{
+    padding: 20px;
+    background: #F4F4F8;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+    display: flex;
+}
+.quick-single-button a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #282B6C;
+}
+
+.quick-single-button img{
+    width: 20px;
+    height: 15px;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+.quick-single-button:hover img{
+    margin-right: 10px;
+
+}
+
+.calender{
+    margin-top: 15px;
+}
+.alart{
+    overflow: scroll;
+    max-height: 500px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    border-radius: 10px;
+
+    
+}
+
+
+.alart .card{
+    background: #F4F4F8;
+    padding: 17px 10px 17px 17px;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: rgba(17, 17, 26, 0.2) 0px 1px 0px;
+    width: 99%;
+    margin: 15px auto;
+    
+}
+
+.alart::-webkit-scrollbar {
+    display: none;
+  }
+.alart .text p{
+    font-size: 11px;
+   color: rgba(128, 128, 130, 1);
+   line-height: 1.5;
+}
+.alart .text h3{
+   font-size: 16px;
+   color: rgb(49, 49, 87);
+   margin-bottom: 5px;
+}
+
+.alart .card .circle{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(253, 187, 56, 1);
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.alart .card:nth-child(1) .circle{
+    background: rgba(40, 43, 108, 1);
+}
+
+.alart .card:nth-child(2) .circle{
+    background: #FDBB38;
+}
+.alart .card:nth-child(3) .circle{
+    background: rgba(244, 104, 65, 1);
+}
+.alart .card:nth-child(4) .circle{
+    background: rgba(40, 43, 108, 1);
+}
+.alart .card:nth-child(5) .circle{
+    background: #19AFFB;
+}
+
+
+
+@media (min-width: 400px) and (max-width: 500px) {
+    .content-area{
+     display: none;
+     width: 0;
+    }
+   }
